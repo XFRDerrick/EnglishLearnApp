@@ -10,6 +10,19 @@
 		7CC8FF8C1E160A7D00674990 /* UNSetUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8FF8B1E160A7D00674990 /* UNSetUpController.m */; };
 		7CC8FF901E160F6900674990 /* UNUserLeftHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8FF8E1E160F6900674990 /* UNUserLeftHeaderCell.m */; };
 		7CC8FF911E160F6900674990 /* UNUserLeftHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC8FF8F1E160F6900674990 /* UNUserLeftHeaderCell.xib */; };
+		7CC8FF9D1E16215700674990 /* NSObject+Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8FF981E16215700674990 /* NSObject+Parse.m */; };
+		7CC8FF9E1E16215700674990 /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8FF9A1E16215700674990 /* UIColor+RandomColor.m */; };
+		7CC8FF9F1E16215700674990 /* UIView+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8FF9C1E16215700674990 /* UIView+HUD.m */; };
+		7CC8FFA31E16224900674990 /* UNUserLoginRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8FFA11E16224900674990 /* UNUserLoginRegisterController.m */; };
+		7CC8FFA41E16224900674990 /* UNUserLoginRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC8FFA21E16224900674990 /* UNUserLoginRegisterController.xib */; };
+		7CC8FFAD1E1627F200674990 /* UNUserLoginRegisterDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8FFAB1E1627F200674990 /* UNUserLoginRegisterDetailController.m */; };
+		7CC8FFAE1E1627F200674990 /* UNUserLoginRegisterDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC8FFAC1E1627F200674990 /* UNUserLoginRegisterDetailController.xib */; };
+		7CC8FFBB1E16464500674990 /* EditUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8FFB41E16464500674990 /* EditUserInfoViewController.m */; };
+		7CC8FFBC1E16464500674990 /* EditUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC8FFB51E16464500674990 /* EditUserInfoViewController.xib */; };
+		7CC8FFBD1E16464500674990 /* UNUserInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8FFB71E16464500674990 /* UNUserInfoController.m */; };
+		7CC8FFBE1E16464500674990 /* UserinfoHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8FFB91E16464500674990 /* UserinfoHeaderCell.m */; };
+		7CC8FFBF1E16464500674990 /* UserinfoHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC8FFBA1E16464500674990 /* UserinfoHeaderCell.xib */; };
+		7CC8FFC21E164A0C00674990 /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8FFC11E164A0C00674990 /* UserInfoModel.m */; };
 		7CF1E3391E15EA3E0035B6D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1E3381E15EA3E0035B6D0 /* main.m */; };
 		7CF1E33C1E15EA3E0035B6D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1E33B1E15EA3E0035B6D0 /* AppDelegate.m */; };
 		7CF1E3421E15EA3E0035B6D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF1E3401E15EA3E0035B6D0 /* Main.storyboard */; };
@@ -48,6 +61,28 @@
 		7CC8FF8D1E160F6900674990 /* UNUserLeftHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNUserLeftHeaderCell.h; sourceTree = "<group>"; };
 		7CC8FF8E1E160F6900674990 /* UNUserLeftHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNUserLeftHeaderCell.m; sourceTree = "<group>"; };
 		7CC8FF8F1E160F6900674990 /* UNUserLeftHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UNUserLeftHeaderCell.xib; sourceTree = "<group>"; };
+		7CC8FF971E16215700674990 /* NSObject+Parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Parse.h"; sourceTree = "<group>"; };
+		7CC8FF981E16215700674990 /* NSObject+Parse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Parse.m"; sourceTree = "<group>"; };
+		7CC8FF991E16215700674990 /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RandomColor.h"; sourceTree = "<group>"; };
+		7CC8FF9A1E16215700674990 /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomColor.m"; sourceTree = "<group>"; };
+		7CC8FF9B1E16215700674990 /* UIView+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HUD.h"; sourceTree = "<group>"; };
+		7CC8FF9C1E16215700674990 /* UIView+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HUD.m"; sourceTree = "<group>"; };
+		7CC8FFA01E16224900674990 /* UNUserLoginRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNUserLoginRegisterController.h; sourceTree = "<group>"; };
+		7CC8FFA11E16224900674990 /* UNUserLoginRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNUserLoginRegisterController.m; sourceTree = "<group>"; };
+		7CC8FFA21E16224900674990 /* UNUserLoginRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UNUserLoginRegisterController.xib; sourceTree = "<group>"; };
+		7CC8FFAA1E1627F200674990 /* UNUserLoginRegisterDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNUserLoginRegisterDetailController.h; sourceTree = "<group>"; };
+		7CC8FFAB1E1627F200674990 /* UNUserLoginRegisterDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNUserLoginRegisterDetailController.m; sourceTree = "<group>"; };
+		7CC8FFAC1E1627F200674990 /* UNUserLoginRegisterDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UNUserLoginRegisterDetailController.xib; sourceTree = "<group>"; };
+		7CC8FFB31E16464500674990 /* EditUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUserInfoViewController.h; sourceTree = "<group>"; };
+		7CC8FFB41E16464500674990 /* EditUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUserInfoViewController.m; sourceTree = "<group>"; };
+		7CC8FFB51E16464500674990 /* EditUserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditUserInfoViewController.xib; sourceTree = "<group>"; };
+		7CC8FFB61E16464500674990 /* UNUserInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNUserInfoController.h; sourceTree = "<group>"; };
+		7CC8FFB71E16464500674990 /* UNUserInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNUserInfoController.m; sourceTree = "<group>"; };
+		7CC8FFB81E16464500674990 /* UserinfoHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserinfoHeaderCell.h; sourceTree = "<group>"; };
+		7CC8FFB91E16464500674990 /* UserinfoHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserinfoHeaderCell.m; sourceTree = "<group>"; };
+		7CC8FFBA1E16464500674990 /* UserinfoHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserinfoHeaderCell.xib; sourceTree = "<group>"; };
+		7CC8FFC01E164A0C00674990 /* UserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoModel.h; sourceTree = "<group>"; };
+		7CC8FFC11E164A0C00674990 /* UserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoModel.m; sourceTree = "<group>"; };
 		7CF1E3341E15EA3E0035B6D0 /* LearnEnglish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnEnglish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF1E3381E15EA3E0035B6D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7CF1E33A1E15EA3E0035B6D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -150,6 +185,7 @@
 		7CC8FF921E16132300674990 /* LoginRegister */ = {
 			isa = PBXGroup;
 			children = (
+				7CC8FFAF1E16462500674990 /* UserInfo */,
 				7CC8FF931E16132300674990 /* Controller */,
 				7CC8FF941E16132300674990 /* Model */,
 				7CC8FF951E16132300674990 /* View */,
@@ -160,6 +196,12 @@
 		7CC8FF931E16132300674990 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7CC8FFA01E16224900674990 /* UNUserLoginRegisterController.h */,
+				7CC8FFA11E16224900674990 /* UNUserLoginRegisterController.m */,
+				7CC8FFA21E16224900674990 /* UNUserLoginRegisterController.xib */,
+				7CC8FFAA1E1627F200674990 /* UNUserLoginRegisterDetailController.h */,
+				7CC8FFAB1E1627F200674990 /* UNUserLoginRegisterDetailController.m */,
+				7CC8FFAC1E1627F200674990 /* UNUserLoginRegisterDetailController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -172,6 +214,60 @@
 			sourceTree = "<group>";
 		};
 		7CC8FF951E16132300674990 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7CC8FF961E16215700674990 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				7CC8FF971E16215700674990 /* NSObject+Parse.h */,
+				7CC8FF981E16215700674990 /* NSObject+Parse.m */,
+				7CC8FF991E16215700674990 /* UIColor+RandomColor.h */,
+				7CC8FF9A1E16215700674990 /* UIColor+RandomColor.m */,
+				7CC8FF9B1E16215700674990 /* UIView+HUD.h */,
+				7CC8FF9C1E16215700674990 /* UIView+HUD.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		7CC8FFAF1E16462500674990 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				7CC8FFB01E16462500674990 /* Controller */,
+				7CC8FFB11E16462500674990 /* Model */,
+				7CC8FFB21E16462500674990 /* View */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		7CC8FFB01E16462500674990 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7CC8FFB31E16464500674990 /* EditUserInfoViewController.h */,
+				7CC8FFB41E16464500674990 /* EditUserInfoViewController.m */,
+				7CC8FFB51E16464500674990 /* EditUserInfoViewController.xib */,
+				7CC8FFB61E16464500674990 /* UNUserInfoController.h */,
+				7CC8FFB71E16464500674990 /* UNUserInfoController.m */,
+				7CC8FFB81E16464500674990 /* UserinfoHeaderCell.h */,
+				7CC8FFB91E16464500674990 /* UserinfoHeaderCell.m */,
+				7CC8FFBA1E16464500674990 /* UserinfoHeaderCell.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7CC8FFB11E16462500674990 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7CC8FFC01E164A0C00674990 /* UserInfoModel.h */,
+				7CC8FFC11E164A0C00674990 /* UserInfoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7CC8FFB21E16462500674990 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -213,6 +309,7 @@
 				7CF1E3431E15EA3E0035B6D0 /* Assets.xcassets */,
 				7CF1E3451E15EA3E0035B6D0 /* LaunchScreen.storyboard */,
 				7CF1E3481E15EA3E0035B6D0 /* Info.plist */,
+				7CC8FF961E16215700674990 /* Category */,
 				7CF1E36A1E15F3A40035B6D0 /* Vendor */,
 				7CF1E3371E15EA3E0035B6D0 /* Supporting Files */,
 			);
@@ -415,6 +512,7 @@
 				TargetAttributes = {
 					7CF1E3331E15EA3E0035B6D0 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 754TY7VH2R;
 						ProvisioningStyle = Automatic;
 					};
 					7CF1E34C1E15EA3E0035B6D0 = {
@@ -457,7 +555,11 @@
 				7CF1E3471E15EA3E0035B6D0 /* LaunchScreen.storyboard in Resources */,
 				7CF1E3441E15EA3E0035B6D0 /* Assets.xcassets in Resources */,
 				7CF1E3421E15EA3E0035B6D0 /* Main.storyboard in Resources */,
+				7CC8FFBF1E16464500674990 /* UserinfoHeaderCell.xib in Resources */,
+				7CC8FFA41E16224900674990 /* UNUserLoginRegisterController.xib in Resources */,
 				7CC8FF911E160F6900674990 /* UNUserLeftHeaderCell.xib in Resources */,
+				7CC8FFBC1E16464500674990 /* EditUserInfoViewController.xib in Resources */,
+				7CC8FFAE1E1627F200674990 /* UNUserLoginRegisterDetailController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,14 +632,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CC8FF9F1E16215700674990 /* UIView+HUD.m in Sources */,
+				7CC8FFBE1E16464500674990 /* UserinfoHeaderCell.m in Sources */,
+				7CC8FFC21E164A0C00674990 /* UserInfoModel.m in Sources */,
+				7CC8FFAD1E1627F200674990 /* UNUserLoginRegisterDetailController.m in Sources */,
 				7CF1E3831E15F6660035B6D0 /* UNLeftMenuController.m in Sources */,
+				7CC8FFBD1E16464500674990 /* UNUserInfoController.m in Sources */,
 				7CF1E33C1E15EA3E0035B6D0 /* AppDelegate.m in Sources */,
+				7CC8FFBB1E16464500674990 /* EditUserInfoViewController.m in Sources */,
 				7CC8FF901E160F6900674990 /* UNUserLeftHeaderCell.m in Sources */,
 				7CF1E3391E15EA3E0035B6D0 /* main.m in Sources */,
 				7CF1E3731E15F3EB0035B6D0 /* RESideMenu.m in Sources */,
 				7CF1E37F1E15F6070035B6D0 /* UNMainTableViewController.m in Sources */,
+				7CC8FFA31E16224900674990 /* UNUserLoginRegisterController.m in Sources */,
 				7CF1E3721E15F3EB0035B6D0 /* RECommonFunctions.m in Sources */,
+				7CC8FF9D1E16215700674990 /* NSObject+Parse.m in Sources */,
 				7CC8FF8C1E160A7D00674990 /* UNSetUpController.m in Sources */,
+				7CC8FF9E1E16215700674990 /* UIColor+RandomColor.m in Sources */,
 				7CF1E3741E15F3EB0035B6D0 /* UIViewController+RESideMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -686,6 +797,7 @@
 			baseConfigurationReference = 9A8A6D32C55A47ABADC0FC6C /* Pods-LearnEnglish.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 754TY7VH2R;
 				GCC_PREFIX_HEADER = LearnEnglish/PrefixHeader.pch;
 				INFOPLIST_FILE = LearnEnglish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -699,6 +811,7 @@
 			baseConfigurationReference = D5EFBA307CB07E96FA01BDC7 /* Pods-LearnEnglish.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 754TY7VH2R;
 				GCC_PREFIX_HEADER = LearnEnglish/PrefixHeader.pch;
 				INFOPLIST_FILE = LearnEnglish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

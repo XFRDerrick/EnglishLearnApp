@@ -11,12 +11,20 @@
 #import "UNSetUpController.h"
 
 #import "UNUserLeftHeaderCell.h"
+#import "UNUserLoginRegisterController.h"
+
+//user
+#import "UNUserInfoController.h"
 
 @interface UNLeftMenuController ()
 @property (strong, readwrite, nonatomic) UITableView *tableView;
+//可以判断是否登录了
+@property (nonatomic, strong) BmobUser *userinfo;
 @end
 
 @implementation UNLeftMenuController
+
+#pragma mark 获取新的用户信息
 
 - (UITableView *)tableView{
 
@@ -56,13 +64,26 @@
     
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.tableView.backgroundColor = [UIColor clearColor];
-//    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        self.userinfo = [BmobUser currentUser];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+        
+    });
+    //    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
     
 }
 
 - (void)viewWillAppear:(BOOL)animated{
 
+    self.navigationController.navigationBar.hidden = YES;
  
+}
+- (void)viewWillDisappear:(BOOL)animated{
+
+    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -98,8 +119,17 @@
         
         cell.backgroundColor = [UIColor clearColor];
         cell.selectedBackgroundView = [[UIView alloc] init];
-        cell.headerImage.image = [UIImage imageNamed:@"icon"];
-        cell.nickNameLable.text = @"点击登录";
+        
+        if (self.userinfo) {
+            [cell.headerImage setImageWithURL:[self.userinfo objectForKey:@"headPath"] placeholder:[UIImage imageNamed:@"icon"]];
+            //账户或者昵称
+            cell.nickNameLable.text =[self.userinfo objectForKey:@"nick"] != nil ? [self.userinfo objectForKey:@"nick"]:self.userinfo.username;
+        }else{
+            
+            cell.headerImage.image = [UIImage imageNamed:@"icon"];
+            cell.nickNameLable.text = @"点击登录";
+        }
+        
         return cell;
         
     }else{
@@ -130,9 +160,20 @@
    
     //点击登录
     if (indexPath.row == 0) {
-        
-        
-        
+        //判断是否登录
+        if (self.userinfo) {
+            UNUserInfoController *infoVC = [[UNUserInfoController alloc] initWithStyle:UITableViewStylePlain];
+            
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:infoVC] animated:YES];
+            [self.sideMenuViewController hideMenuViewController];
+            
+        }else{
+            
+            UNUserLoginRegisterController *lrVC = [[UNUserLoginRegisterController alloc] initWithNibName:@"UNUserLoginRegisterController" bundle:nil];
+            lrVC.enterHidden = YES;
+            [self presentViewController:[[UINavigationController alloc] initWithRootViewController:lrVC] animated:YES completion:nil];
+        }
+       
     }
     
     if (indexPath.row == 1) {

@@ -50,7 +50,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.titles[section] count];
+    NSArray *titleArr= self.titles[section];
+    return titleArr.count;
 }
 
 
