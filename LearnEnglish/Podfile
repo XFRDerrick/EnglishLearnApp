@@ -1,0 +1,15 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '8.0'
+use_frameworks!
+target 'LearnEnglish' do
+
+pod 'BmobSDK'
+pod 'Masonry'
+pod 'AFNetworking'
+pod 'YYKit'
+pod 'MJRefresh'
+
+pod 'MBProgressHUD'
+
+
+end
