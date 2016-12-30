@@ -22,6 +22,7 @@
 		7CF1E3741E15F3EB0035B6D0 /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1E3711E15F3EB0035B6D0 /* UIViewController+RESideMenu.m */; };
 		7CF1E37F1E15F6070035B6D0 /* UNMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1E37E1E15F6070035B6D0 /* UNMainTableViewController.m */; };
 		7CF1E3831E15F6660035B6D0 /* UNLeftMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1E3811E15F6660035B6D0 /* UNLeftMenuController.m */; };
+		988943F399A0740986879CA7 /* Pods_LearnEnglish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEFF76928DFC5F0E06BBFE9 /* Pods_LearnEnglish.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,9 @@
 		7CF1E3811E15F6660035B6D0 /* UNLeftMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNLeftMenuController.m; sourceTree = "<group>"; };
 		7CF1E3851E15F6920035B6D0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7CF1E3861E15F6DD0035B6D0 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		9A8A6D32C55A47ABADC0FC6C /* Pods-LearnEnglish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnEnglish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearnEnglish/Pods-LearnEnglish.debug.xcconfig"; sourceTree = "<group>"; };
+		D5EFBA307CB07E96FA01BDC7 /* Pods-LearnEnglish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnEnglish.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearnEnglish/Pods-LearnEnglish.release.xcconfig"; sourceTree = "<group>"; };
+		FAEFF76928DFC5F0E06BBFE9 /* Pods_LearnEnglish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnEnglish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				988943F399A0740986879CA7 /* Pods_LearnEnglish.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A6E57ACEDAECC0919E535D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A8A6D32C55A47ABADC0FC6C /* Pods-LearnEnglish.debug.xcconfig */,
+				D5EFBA307CB07E96FA01BDC7 /* Pods-LearnEnglish.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7CC8FF861E160A5500674990 /* SetUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +185,8 @@
 				7CF1E3501E15EA3E0035B6D0 /* LearnEnglishTests */,
 				7CF1E35B1E15EA3E0035B6D0 /* LearnEnglishUITests */,
 				7CF1E3351E15EA3E0035B6D0 /* Products */,
+				3A6E57ACEDAECC0919E535D7 /* Pods */,
+				A97F3D083D39B8DAFC63C407 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -321,6 +337,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A97F3D083D39B8DAFC63C407 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAEFF76928DFC5F0E06BBFE9 /* Pods_LearnEnglish.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -328,9 +352,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7CF1E3611E15EA3E0035B6D0 /* Build configuration list for PBXNativeTarget "LearnEnglish" */;
 			buildPhases = (
+				2963D137645412C50A6CE7FF /* [CP] Check Pods Manifest.lock */,
 				7CF1E3301E15EA3E0035B6D0 /* Sources */,
 				7CF1E3311E15EA3E0035B6D0 /* Frameworks */,
 				7CF1E3321E15EA3E0035B6D0 /* Resources */,
+				1F08637208A7D2514A69D9CE /* [CP] Embed Pods Frameworks */,
+				066AFB5E71E3A6DAD8900663 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -449,6 +476,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		066AFB5E71E3A6DAD8900663 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LearnEnglish/Pods-LearnEnglish-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1F08637208A7D2514A69D9CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LearnEnglish/Pods-LearnEnglish-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2963D137645412C50A6CE7FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7CF1E3301E15EA3E0035B6D0 /* Sources */ = {
@@ -608,6 +683,7 @@
 		};
 		7CF1E3621E15EA3E0035B6D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A8A6D32C55A47ABADC0FC6C /* Pods-LearnEnglish.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = LearnEnglish/PrefixHeader.pch;
@@ -620,6 +696,7 @@
 		};
 		7CF1E3631E15EA3E0035B6D0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5EFBA307CB07E96FA01BDC7 /* Pods-LearnEnglish.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = LearnEnglish/PrefixHeader.pch;
