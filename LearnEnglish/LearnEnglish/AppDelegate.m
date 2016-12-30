@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "UNMainTableViewController.h"
+#import "UNLeftMenuController.h"
+#import "RESideMenu.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<RESideMenuDelegate>
 
 @end
 
@@ -16,10 +19,54 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[[UNMainTableViewController alloc] initWithStyle:UITableViewStylePlain]];
+    
+    UNLeftMenuController *leftMenuViewController = [[UNLeftMenuController alloc] init];
+   
+    RESideMenu *sideMenuVC = [[RESideMenu alloc] initWithContentViewController:navigationController leftMenuViewController:leftMenuViewController rightMenuViewController:nil];
+    
+    sideMenuVC.backgroundImage = [UIImage imageNamed:@"leftVC_BG"];
+    
+    sideMenuVC.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
+    sideMenuVC.delegate = self;
+    sideMenuVC.contentViewShadowColor = [UIColor blackColor];
+    sideMenuVC.contentViewShadowOffset = CGSizeMake(0, 0);
+    sideMenuVC.contentViewShadowOpacity = 0.6;
+    sideMenuVC.contentViewShadowRadius = 12;
+    sideMenuVC.contentViewShadowEnabled = YES;
+    self.window.rootViewController = sideMenuVC;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
+#pragma mark -
+#pragma mark RESideMenu Delegate
+
+- (void)sideMenu:(RESideMenu *)sideMenu willShowMenuViewController:(UIViewController *)menuViewController
+{
+    NSLog(@"willShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
+}
+
+- (void)sideMenu:(RESideMenu *)sideMenu didShowMenuViewController:(UIViewController *)menuViewController
+{
+    NSLog(@"didShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
+}
+
+- (void)sideMenu:(RESideMenu *)sideMenu willHideMenuViewController:(UIViewController *)menuViewController
+{
+    NSLog(@"willHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
+}
+
+- (void)sideMenu:(RESideMenu *)sideMenu didHideMenuViewController:(UIViewController *)menuViewController
+{
+    NSLog(@"didHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
+}
+#pragma mark - 
+#pragma mark AppDelegate
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

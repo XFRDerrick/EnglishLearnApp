@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  UNMainTableViewController.h
 //  LearnEnglish
 //
 //  Created by universe on 2016/12/30.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface UNMainTableViewController : UITableViewController
 
 @end
-
