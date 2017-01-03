@@ -8,7 +8,10 @@
 
 #import "UNMainTableViewController.h"
 
-@interface UNMainTableViewController ()
+#import "RNFrostedSidebar.h"
+@interface UNMainTableViewController ()<RNFrostedSidebarDelegate>
+
+@property (nonatomic, strong) NSMutableIndexSet *optionIndices;
 
 @end
 
@@ -28,8 +31,53 @@
     UIBarButtonItem *leftitem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu"] style:UIBarButtonItemStyleDone target:self action:@selector(presentLeftMenuViewController:)];
     self.navigationItem.leftBarButtonItem = leftitem;
 
+//    user
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"user"] style:UIBarButtonItemStyleDone target:self action:@selector(showRightSideBar)];
+    self.navigationItem.rightBarButtonItem = rightItem;
+}
+
+#pragma mark 右侧边栏的显示等
+- (void)showRightSideBar{
+
+    NSArray *images = @[
+                        [UIImage imageNamed:@"profile"],
+                        [UIImage imageNamed:@"question"],
+                        [UIImage imageNamed:@"unread"],
+                        ];
+    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images];
+    callout.titles = @[@"个人详情",@"我的作业",@"未读消息"];
+//    callout.width = KScreenSize.width / 4.0;
+    
+    [callout.headIV setImageWithURL:[NSURL URLWithString:[[BmobUser currentUser] objectForKey:@"headPath"]] placeholder:[UIImage imageNamed:@"loadimage"]];
+    
+    callout.delegate = self;
+    callout.showFromRight = YES;
+    
+    [callout show];
+
     
 }
+
+
+#pragma mark - RNFrostedSidebarDelegate
+
+- (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index {
+    NSLog(@"Tapped item at index %lu",(unsigned long)index);
+    if (index == 3) {
+        [sidebar dismissAnimated:YES];
+//        [sidebar dismissAnimated:YES completion:nil];
+    }
+}
+
+- (void)sidebar:(RNFrostedSidebar *)sidebar didEnable:(BOOL)itemEnabled itemAtIndex:(NSUInteger)index {
+    if (itemEnabled) {
+        [self.optionIndices addIndex:index];
+    }
+    else {
+        [self.optionIndices removeIndex:index];
+    }
+}
+
 
 - (void)setupUI{
 

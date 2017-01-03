@@ -1,39 +1,61 @@
 //
-//  UNSetUpController.m
+//  UNStudentsListController.m
 //  LearnEnglish
 //
-//  Created by universe on 2016/12/30.
-//  Copyright © 2016年 universe. All rights reserved.
+//  Created by universe on 2017/1/3.
+//  Copyright © 2017年 universe. All rights reserved.
 //
 
-#import "UNSetUpController.h"
+#import "UNStudentsListController.h"
+#import "UNStudentController.h"
 
-@interface UNSetUpController ()
-
-@property (nonatomic, strong) NSArray *titles;
-
+@interface UNStudentsListController ()
+@property (nonatomic, strong) NSMutableArray *students;
 @end
 
-@implementation UNSetUpController
-
-- (NSArray *)titles{
-
-    if (!_titles) {
-        _titles = @[@[@"清除缓存"],
-                    @[@"修改密码",@"修改名字和头像",@"切换账户"]];
-    }
-    return _titles;
-}
+@implementation UNStudentsListController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupStudentNav];
+    self.title = @"学生列表";
+    [self addMjRefresh];
+    //    self.view.backgroundColor = [UIColor redColor];
     
-    [self setupUI];
-}
-- (void)setupUI{
-    self.title = @"设置";
+    [self.tableView.mj_header beginRefreshing];
 }
 
+
+- (void)addMjRefresh{
+    
+    [self.view showHUD];
+    self.tableView.mj_header = [MJRefreshHeader headerWithRefreshingBlock:^{
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            BmobQuery *bq = [BmobQuery queryWithClassName:@"Classes"];
+            [bq includeKey:@"byUser"];
+            [bq findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+                [self.tableView.mj_header endRefreshing];
+                self.students = [array mutableCopy];
+                [self.tableView reloadData];
+                NSLog(@"Count:%lu",(unsigned long)self.students.count);
+            }];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.view showMessage:@"加载成功"];
+            });
+        });
+    }];
+}
+
+- (void)setupStudentNav{
+    
+    UIBarButtonItem *newItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addStudentAction:)];
+    self.navigationItem.rightBarButtonItem = newItem;
+}
+- (void)addStudentAction:(UIBarButtonItem *)sender{
+
+    UNStudentController *stuVC = [[UNStudentController alloc] init];
+    [self.navigationController pushViewController:stuVC animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -43,32 +65,24 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
-    return 2;
+#warning Incomplete implementation, return the number of sections
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSArray *titleArr= self.titles[section];
-    return titleArr.count;
+#warning Incomplete implementation, return the number of rows
+    return 0;
 }
 
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"setCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"setCell"];
-    }
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = self.titles[indexPath.section][indexPath.row];
+    // Configure the cell...
     
     return cell;
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    return 54;
-}
+*/
 
 /*
 // Override to support conditional editing of the table view.

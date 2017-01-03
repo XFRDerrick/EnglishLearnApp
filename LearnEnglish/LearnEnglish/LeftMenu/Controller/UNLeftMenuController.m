@@ -15,6 +15,9 @@
 
 //user
 #import "UNUserInfoController.h"
+#import "UNClassListController.h"
+#import "UNStudentsListController.h"
+
 
 @interface UNLeftMenuController ()
 @property (strong, readwrite, nonatomic) UITableView *tableView;
@@ -51,9 +54,7 @@
     [super viewDidLoad];
     
     [self setupUI];
-    
 }
-
 
 - (void)setupUI{
     
@@ -79,6 +80,12 @@
 - (void)viewWillAppear:(BOOL)animated{
 
     self.navigationController.navigationBar.hidden = YES;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        self.userinfo = [BmobUser currentUser];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    });
  
 }
 - (void)viewWillDisappear:(BOOL)animated{
@@ -191,6 +198,20 @@
         [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:setVC] animated:YES];
         [self.sideMenuViewController hideMenuViewController];
     }
+    if (indexPath.row == 5) {
+        //UNClassListController.h
+        UNClassListController *classList = [[UNClassListController alloc] initWithStyle:UITableViewStylePlain];
+        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:classList] animated:YES];
+        [self.sideMenuViewController hideMenuViewController];
+    }
+    if (indexPath.row == 6) {
+        
+        UNStudentsListController *studentList =[[UNStudentsListController alloc] initWithStyle:UITableViewStylePlain];
+        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:studentList] animated:YES];
+        [self.sideMenuViewController hideMenuViewController];
+    }
+    
+    
 }
 
 /*

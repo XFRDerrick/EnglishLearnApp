@@ -10,6 +10,8 @@
 #import "UserinfoHeaderCell.h"
 #import "EditUserInfoViewController.h"
 
+#import "UNUserLoginRegisterController.h"
+
 @interface UNUserInfoController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic, strong) BmobUser *user;
@@ -142,13 +144,12 @@
     
         [BmobUser logout];
         
+        //显示登录界面
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
-        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
-        UIViewController *vc = [story instantiateInitialViewController];
-        
-        window.rootViewController = vc;
-        
+        UNUserLoginRegisterController *lrVC = [[UNUserLoginRegisterController alloc] init];
+        lrVC.enterHidden = NO;
+        window.rootViewController = [[UINavigationController alloc] initWithRootViewController:lrVC];
         [window makeKeyAndVisible];
         
     }

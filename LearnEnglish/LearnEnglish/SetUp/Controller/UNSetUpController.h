@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UNMainTableViewController.h"
 
-@interface UNSetUpController : UITableViewController
+@interface UNSetUpController : UNMainTableViewController//UITableViewController
 
 @end

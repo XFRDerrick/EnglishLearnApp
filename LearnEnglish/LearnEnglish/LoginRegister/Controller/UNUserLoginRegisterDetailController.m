@@ -8,7 +8,7 @@
 
 #import "UNUserLoginRegisterDetailController.h"
 
-@interface UNUserLoginRegisterDetailController ()
+@interface UNUserLoginRegisterDetailController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passWordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *actionButton;
@@ -22,16 +22,46 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+   
+    [self setupsubViewShow];
+    [self setupTextField];
+    
+}
+
+- (void)setupsubViewShow{
     if ([self.title isEqualToString:@"登录"]) {
         self.login = YES;
     }
     if (self.isLogin) {
         [self.actionButton setTitle:@"登     录" forState:UIControlStateNormal];
     }else{
-    [self.actionButton setTitle:@"注     册" forState:UIControlStateNormal];
         
+        [self.actionButton setTitle:@"注     册" forState:UIControlStateNormal];
     }
 }
+
+- (void)setupTextField{
+
+    self.userNameTextField.returnKeyType = UIReturnKeyDone;
+    self.userNameTextField.delegate = self;
+    self.passWordTextField.returnKeyType = UIReturnKeyDone;
+    self.passWordTextField.delegate = self;
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [self.passWordTextField resignFirstResponder];
+    [self.userNameTextField resignFirstResponder];
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.passWordTextField resignFirstResponder];
+    [self.userNameTextField resignFirstResponder];
+}
+
+
 
 - (IBAction)buttonAction:(UIButton *)sender {
     
