@@ -8,6 +8,8 @@
 
 #import "UNStudentsListController.h"
 #import "UNStudentController.h"
+#import "UNStudentCell.h"
+
 
 @interface UNStudentsListController ()
 @property (nonatomic, strong) NSMutableArray *students;
@@ -15,14 +17,24 @@
 
 @implementation UNStudentsListController
 
+- (NSMutableArray *)students{
+
+    if (!_students) {
+        _students = [NSMutableArray array];
+    }
+    return _students;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupStudentNav];
     self.title = @"学生列表";
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"UNStudentCell" bundle:nil] forCellReuseIdentifier:@"UNStudentCell"];
     [self addMjRefresh];
     //    self.view.backgroundColor = [UIColor redColor];
     
-    [self.tableView.mj_header beginRefreshing];
+    
 }
 
 
@@ -31,19 +43,16 @@
     [self.view showHUD];
     self.tableView.mj_header = [MJRefreshHeader headerWithRefreshingBlock:^{
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            BmobQuery *bq = [BmobQuery queryWithClassName:@"Classes"];
-            [bq includeKey:@"byUser"];
-            [bq findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-                [self.tableView.mj_header endRefreshing];
+            
+            BmobQuery *query = [BmobUser query];
+            [query whereKey:@"teacher" equalTo:@(NO)];
+            [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
                 self.students = [array mutableCopy];
                 [self.tableView reloadData];
-                NSLog(@"Count:%lu",(unsigned long)self.students.count);
             }];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.view showMessage:@"加载成功"];
-            });
         });
     }];
+//    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)setupStudentNav{
@@ -64,25 +73,41 @@
 
 #pragma mark - Table view data source
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    return 50;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.students.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    UNStudentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UNStudentCell" forIndexPath:indexPath];
+    cell.student = self.students[indexPath.row];
     return cell;
 }
-*/
+
+- (void)viewWillAppear:(BOOL)animated{
+
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        BmobQuery *query = [BmobUser query];
+        [query whereKey:@"teacher" equalTo:@(NO)];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+            self.students = [array mutableCopy];
+            [self.tableView reloadData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.view showMessage:@"学生列表加载成功"];
+            });
+        }];
+    });
+}
 
 /*
 // Override to support conditional editing of the table view.

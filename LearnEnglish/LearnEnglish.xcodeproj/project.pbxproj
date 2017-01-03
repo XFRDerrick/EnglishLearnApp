@@ -12,6 +12,9 @@
 		7C2373401E1B6C1C0082099D /* UNStudentsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C23733F1E1B6C1C0082099D /* UNStudentsListController.m */; };
 		7C2373441E1B78720082099D /* UNStudentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2373421E1B78720082099D /* UNStudentController.m */; };
 		7C2373451E1B78720082099D /* UNStudentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2373431E1B78720082099D /* UNStudentController.xib */; };
+		7CA486961E1B912E009E8384 /* TextCheckingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA486951E1B912E009E8384 /* TextCheckingTools.m */; };
+		7CA4869A1E1B9954009E8384 /* UNStudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA486981E1B9954009E8384 /* UNStudentCell.m */; };
+		7CA4869B1E1B9954009E8384 /* UNStudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA486991E1B9954009E8384 /* UNStudentCell.xib */; };
 		7CC8FF8C1E160A7D00674990 /* UNSetUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8FF8B1E160A7D00674990 /* UNSetUpController.m */; };
 		7CC8FF901E160F6900674990 /* UNUserLeftHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8FF8E1E160F6900674990 /* UNUserLeftHeaderCell.m */; };
 		7CC8FF911E160F6900674990 /* UNUserLeftHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC8FF8F1E160F6900674990 /* UNUserLeftHeaderCell.xib */; };
@@ -70,6 +73,11 @@
 		7C2373411E1B78720082099D /* UNStudentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNStudentController.h; sourceTree = "<group>"; };
 		7C2373421E1B78720082099D /* UNStudentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNStudentController.m; sourceTree = "<group>"; };
 		7C2373431E1B78720082099D /* UNStudentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UNStudentController.xib; sourceTree = "<group>"; };
+		7CA486941E1B912E009E8384 /* TextCheckingTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCheckingTools.h; sourceTree = "<group>"; };
+		7CA486951E1B912E009E8384 /* TextCheckingTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCheckingTools.m; sourceTree = "<group>"; };
+		7CA486971E1B9954009E8384 /* UNStudentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNStudentCell.h; sourceTree = "<group>"; };
+		7CA486981E1B9954009E8384 /* UNStudentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNStudentCell.m; sourceTree = "<group>"; };
+		7CA486991E1B9954009E8384 /* UNStudentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UNStudentCell.xib; sourceTree = "<group>"; };
 		7CC8FF8A1E160A7D00674990 /* UNSetUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNSetUpController.h; sourceTree = "<group>"; };
 		7CC8FF8B1E160A7D00674990 /* UNSetUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNSetUpController.m; sourceTree = "<group>"; };
 		7CC8FF8D1E160F6900674990 /* UNUserLeftHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNUserLeftHeaderCell.h; sourceTree = "<group>"; };
@@ -237,6 +245,9 @@
 		7C23733A1E1B41AD0082099D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7CA486971E1B9954009E8384 /* UNStudentCell.h */,
+				7CA486981E1B9954009E8384 /* UNStudentCell.m */,
+				7CA486991E1B9954009E8384 /* UNStudentCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,6 +332,8 @@
 				7CC8FF9A1E16215700674990 /* UIColor+RandomColor.m */,
 				7CC8FF9B1E16215700674990 /* UIView+HUD.h */,
 				7CC8FF9C1E16215700674990 /* UIView+HUD.m */,
+				7CA486941E1B912E009E8384 /* TextCheckingTools.h */,
+				7CA486951E1B912E009E8384 /* TextCheckingTools.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -655,6 +668,7 @@
 				7CC8FF911E160F6900674990 /* UNUserLeftHeaderCell.xib in Resources */,
 				7C2373451E1B78720082099D /* UNStudentController.xib in Resources */,
 				7CC8FFBC1E16464500674990 /* EditUserInfoViewController.xib in Resources */,
+				7CA4869B1E1B9954009E8384 /* UNStudentCell.xib in Resources */,
 				7CC8FFAE1E1627F200674990 /* UNUserLoginRegisterDetailController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -748,6 +762,8 @@
 				7CC8FF9D1E16215700674990 /* NSObject+Parse.m in Sources */,
 				7CC8FF8C1E160A7D00674990 /* UNSetUpController.m in Sources */,
 				7CC8FF9E1E16215700674990 /* UIColor+RandomColor.m in Sources */,
+				7CA4869A1E1B9954009E8384 /* UNStudentCell.m in Sources */,
+				7CA486961E1B912E009E8384 /* TextCheckingTools.m in Sources */,
 				7CF1E3741E15F3EB0035B6D0 /* UIViewController+RESideMenu.m in Sources */,
 				7C23733D1E1B41CF0082099D /* UNClassListController.m in Sources */,
 			);

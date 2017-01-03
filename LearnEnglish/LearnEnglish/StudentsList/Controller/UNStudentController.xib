@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UNStudentController">
             <connections>
                 <outlet property="choiceClassesButton" destination="Q9N-0e-2Ri" id="RM2-ln-7B0"/>
+                <outlet property="choiceHeaderButton" destination="AVu-NP-fxT" id="8k5-Bc-Qpz"/>
                 <outlet property="classesTableView" destination="BAn-Es-zF2" id="Toc-Yp-CKB"/>
                 <outlet property="goldTextField" destination="nZ4-Mf-DbE" id="WjM-A0-1Vk"/>
                 <outlet property="integralTextField" destination="j0i-JZ-9fF" id="A67-7f-4yy"/>
