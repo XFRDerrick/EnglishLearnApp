@@ -17,7 +17,7 @@
 #import "UNUserInfoController.h"
 #import "UNClassListController.h"
 #import "UNStudentsListController.h"
-
+#import "UNMessageController.h"
 
 @interface UNLeftMenuController ()
 @property (strong, readwrite, nonatomic) UITableView *tableView;
@@ -212,6 +212,11 @@
         [self.sideMenuViewController hideMenuViewController];
     }
     
+    if (indexPath.row == 2) {
+        UNMessageController *messageVC = [[UNMessageController alloc] initWithStyle:UITableViewStylePlain];
+        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:messageVC] animated:YES];
+        [self.sideMenuViewController hideMenuViewController];
+    }
      //设置
     if (indexPath.row == 4) {
         UNSetUpController *setVC = [[UNSetUpController alloc] initWithStyle:UITableViewStyleGrouped];

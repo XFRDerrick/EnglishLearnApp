@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UNCreateMessageController">
+            <connections>
+                <outlet property="keyBoardHeaderConstraint" destination="Gm5-3Q-6Eb" id="puE-VA-Av4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLJ-td-Lge">
+                    <rect key="frame" x="10" y="120" width="355" height="1"/>
+                    <color key="backgroundColor" red="0.83319737979999997" green="0.83319737979999997" blue="0.83319737979999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="PET-7I-ePv"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ibf-Uu-k2k">
+                    <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="TQq-Mj-lUg"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gc6-Fr-n6j" customClass="YYTextView">
+                    <rect key="frame" x="10" y="75" width="355" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="JPp-aU-cXr"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="标题(可选)"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize_">
+                            <real key="value" value="18"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontSize_">
+                            <real key="value" value="18"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="fontIsBold_" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </scrollView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUS-o9-wzY" customClass="YYTextView">
+                    <rect key="frame" x="10" y="121" width="355" height="496"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="说点什么……"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize_">
+                            <real key="value" value="18"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontSize_">
+                            <real key="value" value="18"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="gc6-Fr-n6j" secondAttribute="trailing" constant="10" id="CO4-yr-IbJ"/>
+                <constraint firstItem="BLJ-td-Lge" firstAttribute="top" secondItem="gc6-Fr-n6j" secondAttribute="bottom" id="F3V-T4-e7j"/>
+                <constraint firstAttribute="bottom" secondItem="Ibf-Uu-k2k" secondAttribute="bottom" id="Gm5-3Q-6Eb"/>
+                <constraint firstItem="gc6-Fr-n6j" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Lyg-T4-hMa"/>
+                <constraint firstAttribute="trailing" secondItem="gUS-o9-wzY" secondAttribute="trailing" constant="10" id="RqQ-ib-O7K"/>
+                <constraint firstItem="gUS-o9-wzY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="VsH-SF-gap"/>
+                <constraint firstItem="gc6-Fr-n6j" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="75" id="XYd-85-96N"/>
+                <constraint firstAttribute="trailing" secondItem="Ibf-Uu-k2k" secondAttribute="trailing" id="awv-3g-go7"/>
+                <constraint firstItem="BLJ-td-Lge" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="d2L-sf-j5k"/>
+                <constraint firstAttribute="trailing" secondItem="BLJ-td-Lge" secondAttribute="trailing" constant="10" id="knR-vY-vFL"/>
+                <constraint firstItem="Ibf-Uu-k2k" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nLB-ZR-p2q"/>
+                <constraint firstItem="Ibf-Uu-k2k" firstAttribute="top" secondItem="gUS-o9-wzY" secondAttribute="bottom" constant="5" id="psB-iu-hfT"/>
+                <constraint firstItem="gUS-o9-wzY" firstAttribute="top" secondItem="BLJ-td-Lge" secondAttribute="bottom" id="vMZ-Hu-2Gm"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <point key="canvasLocation" x="44.5" y="73.5"/>
+        </view>
+    </objects>
+</document>

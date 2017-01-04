@@ -14,6 +14,9 @@
 		7C2373451E1B78720082099D /* UNStudentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2373431E1B78720082099D /* UNStudentController.xib */; };
 		7C2F5DC01E1C8ED9006F5B65 /* UNSetUpEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F5DBE1E1C8ED9006F5B65 /* UNSetUpEditController.m */; };
 		7C2F5DC11E1C8ED9006F5B65 /* UNSetUpEditController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2F5DBF1E1C8ED9006F5B65 /* UNSetUpEditController.xib */; };
+		7C2F5DCF1E1CC5AB006F5B65 /* UNMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F5DCE1E1CC5AB006F5B65 /* UNMessageController.m */; };
+		7C2F5DD71E1CD01B006F5B65 /* UNCreateMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F5DD51E1CD01B006F5B65 /* UNCreateMessageController.m */; };
+		7C2F5DD81E1CD01B006F5B65 /* UNCreateMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2F5DD61E1CD01B006F5B65 /* UNCreateMessageController.xib */; };
 		7CA486961E1B912E009E8384 /* TextCheckingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA486951E1B912E009E8384 /* TextCheckingTools.m */; };
 		7CA4869A1E1B9954009E8384 /* UNStudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA486981E1B9954009E8384 /* UNStudentCell.m */; };
 		7CA4869B1E1B9954009E8384 /* UNStudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA486991E1B9954009E8384 /* UNStudentCell.xib */; };
@@ -80,6 +83,11 @@
 		7C2F5DBD1E1C8ED9006F5B65 /* UNSetUpEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNSetUpEditController.h; sourceTree = "<group>"; };
 		7C2F5DBE1E1C8ED9006F5B65 /* UNSetUpEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNSetUpEditController.m; sourceTree = "<group>"; };
 		7C2F5DBF1E1C8ED9006F5B65 /* UNSetUpEditController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UNSetUpEditController.xib; sourceTree = "<group>"; };
+		7C2F5DCD1E1CC5AB006F5B65 /* UNMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNMessageController.h; sourceTree = "<group>"; };
+		7C2F5DCE1E1CC5AB006F5B65 /* UNMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNMessageController.m; sourceTree = "<group>"; };
+		7C2F5DD41E1CD01B006F5B65 /* UNCreateMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNCreateMessageController.h; sourceTree = "<group>"; };
+		7C2F5DD51E1CD01B006F5B65 /* UNCreateMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNCreateMessageController.m; sourceTree = "<group>"; };
+		7C2F5DD61E1CD01B006F5B65 /* UNCreateMessageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UNCreateMessageController.xib; sourceTree = "<group>"; };
 		7CA486941E1B912E009E8384 /* TextCheckingTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCheckingTools.h; sourceTree = "<group>"; };
 		7CA486951E1B912E009E8384 /* TextCheckingTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCheckingTools.m; sourceTree = "<group>"; };
 		7CA486971E1B9954009E8384 /* UNStudentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNStudentCell.h; sourceTree = "<group>"; };
@@ -265,6 +273,73 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		7C2F5DC91E1CC599006F5B65 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				7C2F5DCA1E1CC599006F5B65 /* Controller */,
+				7C2F5DCB1E1CC599006F5B65 /* Model */,
+				7C2F5DCC1E1CC599006F5B65 /* View */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		7C2F5DCA1E1CC599006F5B65 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7C2F5DCD1E1CC5AB006F5B65 /* UNMessageController.h */,
+				7C2F5DCE1E1CC5AB006F5B65 /* UNMessageController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7C2F5DCB1E1CC599006F5B65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7C2F5DCC1E1CC599006F5B65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7C2F5DD01E1CCFF0006F5B65 /* CreateMessage */ = {
+			isa = PBXGroup;
+			children = (
+				7C2F5DD11E1CCFF0006F5B65 /* Controller */,
+				7C2F5DD21E1CCFF0006F5B65 /* Model */,
+				7C2F5DD31E1CCFF0006F5B65 /* View */,
+			);
+			path = CreateMessage;
+			sourceTree = "<group>";
+		};
+		7C2F5DD11E1CCFF0006F5B65 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7C2F5DD41E1CD01B006F5B65 /* UNCreateMessageController.h */,
+				7C2F5DD51E1CD01B006F5B65 /* UNCreateMessageController.m */,
+				7C2F5DD61E1CD01B006F5B65 /* UNCreateMessageController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7C2F5DD21E1CCFF0006F5B65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7C2F5DD31E1CCFF0006F5B65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7CC8FF861E160A5500674990 /* SetUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +501,8 @@
 				7CF1E33B1E15EA3E0035B6D0 /* AppDelegate.m */,
 				7CF1E3401E15EA3E0035B6D0 /* Main.storyboard */,
 				7CF1E3791E15F5940035B6D0 /* LeftMenu */,
+				7C2F5DD01E1CCFF0006F5B65 /* CreateMessage */,
+				7C2F5DC91E1CC599006F5B65 /* Message */,
 				7CC8FF921E16132300674990 /* LoginRegister */,
 				7CC8FF861E160A5500674990 /* SetUp */,
 				7CF1E3751E15F5580035B6D0 /* Main */,
@@ -680,6 +757,7 @@
 			files = (
 				7CF1E3471E15EA3E0035B6D0 /* LaunchScreen.storyboard in Resources */,
 				7C2F5DC11E1C8ED9006F5B65 /* UNSetUpEditController.xib in Resources */,
+				7C2F5DD81E1CD01B006F5B65 /* UNCreateMessageController.xib in Resources */,
 				7CF1E3441E15EA3E0035B6D0 /* Assets.xcassets in Resources */,
 				7CF1E3421E15EA3E0035B6D0 /* Main.storyboard in Resources */,
 				7CC8FFBF1E16464500674990 /* UserinfoHeaderCell.xib in Resources */,
@@ -776,11 +854,13 @@
 				7C2373401E1B6C1C0082099D /* UNStudentsListController.m in Sources */,
 				7CF1E3391E15EA3E0035B6D0 /* main.m in Sources */,
 				7CA486A11E1BC6B3009E8384 /* UNStudentDetailController.m in Sources */,
+				7C2F5DD71E1CD01B006F5B65 /* UNCreateMessageController.m in Sources */,
 				7CF1E3731E15F3EB0035B6D0 /* RESideMenu.m in Sources */,
 				7CF1E37F1E15F6070035B6D0 /* UNMainTableViewController.m in Sources */,
 				7CC8FFA31E16224900674990 /* UNUserLoginRegisterController.m in Sources */,
 				7CF1E3721E15F3EB0035B6D0 /* RECommonFunctions.m in Sources */,
 				7C2373441E1B78720082099D /* UNStudentController.m in Sources */,
+				7C2F5DCF1E1CC5AB006F5B65 /* UNMessageController.m in Sources */,
 				7CC8FF9D1E16215700674990 /* NSObject+Parse.m in Sources */,
 				7CC8FF8C1E160A7D00674990 /* UNSetUpController.m in Sources */,
 				7CC8FF9E1E16215700674990 /* UIColor+RandomColor.m in Sources */,

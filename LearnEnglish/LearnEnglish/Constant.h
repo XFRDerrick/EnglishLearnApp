@@ -14,3 +14,5 @@
 #endif /* Constant_h */
 
 #define KScreenSize [UIScreen mainScreen].bounds.size
+
+#define KIsTeacher [[[BmobUser currentUser] objectForKey:@"teacher"] boolValue]
