@@ -79,12 +79,22 @@
 
 - (void)oldUserLogin{
     [self.view showHUD];
+    //本地保存注册的老师账号
+    NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
+    [userDef setObject:self.userNameTextField.text forKey:@"username"];
+    [userDef setObject:self.passWordTextField.text forKey:@"password"];
+    [userDef synchronize];
+    
     [BmobUser loginInbackgroundWithAccount:self.userNameTextField.text andPassword:self.passWordTextField.text block:^(BmobUser *user, NSError *error) {
         if (user) {
             //登录成功 返回
             [self.view showMessage:@"登录成功"];
             [NSTimer scheduledTimerWithTimeInterval:1 block:^(NSTimer * _Nonnull timer) {
-                [self.navigationController popViewControllerAnimated:YES];
+                
+                UIWindow *window = [UIApplication sharedApplication].keyWindow;
+                 window.rootViewController = [[[AppDelegate alloc] init] setWindowRootVCWithMain];
+                
+//                [self.navigationController popViewControllerAnimated:YES];
             } repeats:NO];
             
         } else {
@@ -95,19 +105,27 @@
     
 }
 
+#pragma mark 注册的一定是教室账号
+
 - (void)registerNewUser{
 
     BmobUser *bUser = [[BmobUser alloc] init];
     [bUser setUsername:self.userNameTextField.text];
     [bUser setPassword:self.passWordTextField.text];
+    [bUser setObject:@(YES) forKey:@"teacher"];
     [self.view showHUD];
+    //本地保存注册的老师账号
+    NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
+    [userDef setObject:self.userNameTextField.text forKey:@"username"];
+    [userDef setObject:self.passWordTextField.text forKey:@"password"];
+    [userDef synchronize];
+    
     [bUser signUpInBackgroundWithBlock:^ (BOOL isSuccessful, NSError *error){
         if (isSuccessful){
             [self.view showMessage:@"注册成功,请登录"];
             [NSTimer scheduledTimerWithTimeInterval:1 block:^(NSTimer * _Nonnull timer) {
                 [self.navigationController popViewControllerAnimated:YES];
             } repeats:NO];
-            
         } else {
             NSLog(@"%@",error);
             [self.view showMessage:@"注册失败，请重新注册"];

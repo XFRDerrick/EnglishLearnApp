@@ -130,6 +130,7 @@
 - (void)successfullCreateStudentAccount{
     
     [self.view showMessage:@"创建成功"];
+    [WorkTools loginTeacherAccount];
     [NSTimer scheduledTimerWithTimeInterval:1.0 block:^(NSTimer * _Nonnull timer) {
         [self.navigationController popViewControllerAnimated:YES];
     } repeats:NO];

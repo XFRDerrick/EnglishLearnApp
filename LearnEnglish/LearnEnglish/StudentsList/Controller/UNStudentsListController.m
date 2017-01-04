@@ -10,6 +10,7 @@
 #import "UNStudentController.h"
 #import "UNStudentCell.h"
 
+#import "UNStudentDetailController.h"
 
 @interface UNStudentsListController ()
 @property (nonatomic, strong) NSMutableArray *students;
@@ -93,6 +94,16 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    //显示学生详细信息
+    
+    UNStudentDetailController *detailVC = [[UNStudentDetailController alloc] initWithStyle:UITableViewStyleGrouped];
+    detailVC.student = self.students[indexPath.row];
+    [self.navigationController pushViewController:detailVC animated:YES];
+    
+}
+
 - (void)viewWillAppear:(BOOL)animated{
 
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -103,7 +114,8 @@
             self.students = [array mutableCopy];
             [self.tableView reloadData];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.view showMessage:@"学生列表加载成功"];
+                [self.view hidenHUD];
+//                [self.view showMessage:@"学生列表刷新成功"];
             });
         }];
     });

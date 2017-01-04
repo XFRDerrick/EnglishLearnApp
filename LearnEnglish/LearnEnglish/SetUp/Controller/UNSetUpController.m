@@ -7,7 +7,8 @@
 //
 
 #import "UNSetUpController.h"
-
+#import "UNSetUpEditController.h"
+#import "UNUserLoginRegisterController.h"
 @interface UNSetUpController ()
 
 @property (nonatomic, strong) NSArray *titles;
@@ -68,6 +69,41 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     return 54;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    if (indexPath.section == 1 && indexPath.row == 0) {
+        UNSetUpEditController *edit = [[UNSetUpEditController alloc] initWithNibName:@"UNSetUpEditController" bundle:nil];
+        
+        [self.navigationController pushViewController:edit animated:YES];
+    }
+    if (indexPath.row == 2) {
+        
+        [self cancleLoginAlterAction];
+    }
+}
+
+- (void)cancleLoginAlterAction{
+    
+    UIAlertController *alterVC = [UIAlertController alertControllerWithTitle:@"注销" message:@"确认切换账户" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *actionDone = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [BmobUser logout];
+        //显示登录界面
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        
+        UNUserLoginRegisterController *lrVC = [[UNUserLoginRegisterController alloc] init];
+        lrVC.enterHidden = NO;
+        window.rootViewController = [[UINavigationController alloc] initWithRootViewController:lrVC];
+        [window makeKeyAndVisible];
+        
+        
+    }];
+    UIAlertAction *actionCancle = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [alterVC addAction:actionCancle];
+    [alterVC addAction:actionDone];
+    [self presentViewController:alterVC animated:YES completion:nil];
+    
 }
 
 /*

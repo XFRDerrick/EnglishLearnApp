@@ -12,9 +12,13 @@
 		7C2373401E1B6C1C0082099D /* UNStudentsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C23733F1E1B6C1C0082099D /* UNStudentsListController.m */; };
 		7C2373441E1B78720082099D /* UNStudentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2373421E1B78720082099D /* UNStudentController.m */; };
 		7C2373451E1B78720082099D /* UNStudentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2373431E1B78720082099D /* UNStudentController.xib */; };
+		7C2F5DC01E1C8ED9006F5B65 /* UNSetUpEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F5DBE1E1C8ED9006F5B65 /* UNSetUpEditController.m */; };
+		7C2F5DC11E1C8ED9006F5B65 /* UNSetUpEditController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2F5DBF1E1C8ED9006F5B65 /* UNSetUpEditController.xib */; };
 		7CA486961E1B912E009E8384 /* TextCheckingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA486951E1B912E009E8384 /* TextCheckingTools.m */; };
 		7CA4869A1E1B9954009E8384 /* UNStudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA486981E1B9954009E8384 /* UNStudentCell.m */; };
 		7CA4869B1E1B9954009E8384 /* UNStudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA486991E1B9954009E8384 /* UNStudentCell.xib */; };
+		7CA4869E1E1BB692009E8384 /* WorkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4869D1E1BB692009E8384 /* WorkTools.m */; };
+		7CA486A11E1BC6B3009E8384 /* UNStudentDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA486A01E1BC6B3009E8384 /* UNStudentDetailController.m */; };
 		7CC8FF8C1E160A7D00674990 /* UNSetUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8FF8B1E160A7D00674990 /* UNSetUpController.m */; };
 		7CC8FF901E160F6900674990 /* UNUserLeftHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC8FF8E1E160F6900674990 /* UNUserLeftHeaderCell.m */; };
 		7CC8FF911E160F6900674990 /* UNUserLeftHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CC8FF8F1E160F6900674990 /* UNUserLeftHeaderCell.xib */; };
@@ -73,11 +77,18 @@
 		7C2373411E1B78720082099D /* UNStudentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNStudentController.h; sourceTree = "<group>"; };
 		7C2373421E1B78720082099D /* UNStudentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNStudentController.m; sourceTree = "<group>"; };
 		7C2373431E1B78720082099D /* UNStudentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UNStudentController.xib; sourceTree = "<group>"; };
+		7C2F5DBD1E1C8ED9006F5B65 /* UNSetUpEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNSetUpEditController.h; sourceTree = "<group>"; };
+		7C2F5DBE1E1C8ED9006F5B65 /* UNSetUpEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNSetUpEditController.m; sourceTree = "<group>"; };
+		7C2F5DBF1E1C8ED9006F5B65 /* UNSetUpEditController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UNSetUpEditController.xib; sourceTree = "<group>"; };
 		7CA486941E1B912E009E8384 /* TextCheckingTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCheckingTools.h; sourceTree = "<group>"; };
 		7CA486951E1B912E009E8384 /* TextCheckingTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCheckingTools.m; sourceTree = "<group>"; };
 		7CA486971E1B9954009E8384 /* UNStudentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNStudentCell.h; sourceTree = "<group>"; };
 		7CA486981E1B9954009E8384 /* UNStudentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNStudentCell.m; sourceTree = "<group>"; };
 		7CA486991E1B9954009E8384 /* UNStudentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UNStudentCell.xib; sourceTree = "<group>"; };
+		7CA4869C1E1BB692009E8384 /* WorkTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkTools.h; sourceTree = "<group>"; };
+		7CA4869D1E1BB692009E8384 /* WorkTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkTools.m; sourceTree = "<group>"; };
+		7CA4869F1E1BC6B3009E8384 /* UNStudentDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNStudentDetailController.h; sourceTree = "<group>"; };
+		7CA486A01E1BC6B3009E8384 /* UNStudentDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNStudentDetailController.m; sourceTree = "<group>"; };
 		7CC8FF8A1E160A7D00674990 /* UNSetUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNSetUpController.h; sourceTree = "<group>"; };
 		7CC8FF8B1E160A7D00674990 /* UNSetUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNSetUpController.m; sourceTree = "<group>"; };
 		7CC8FF8D1E160F6900674990 /* UNUserLeftHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNUserLeftHeaderCell.h; sourceTree = "<group>"; };
@@ -231,6 +242,8 @@
 				7C2373411E1B78720082099D /* UNStudentController.h */,
 				7C2373421E1B78720082099D /* UNStudentController.m */,
 				7C2373431E1B78720082099D /* UNStudentController.xib */,
+				7CA4869F1E1BC6B3009E8384 /* UNStudentDetailController.h */,
+				7CA486A01E1BC6B3009E8384 /* UNStudentDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -267,6 +280,9 @@
 			children = (
 				7CC8FF8A1E160A7D00674990 /* UNSetUpController.h */,
 				7CC8FF8B1E160A7D00674990 /* UNSetUpController.m */,
+				7C2F5DBD1E1C8ED9006F5B65 /* UNSetUpEditController.h */,
+				7C2F5DBE1E1C8ED9006F5B65 /* UNSetUpEditController.m */,
+				7C2F5DBF1E1C8ED9006F5B65 /* UNSetUpEditController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -334,6 +350,8 @@
 				7CC8FF9C1E16215700674990 /* UIView+HUD.m */,
 				7CA486941E1B912E009E8384 /* TextCheckingTools.h */,
 				7CA486951E1B912E009E8384 /* TextCheckingTools.m */,
+				7CA4869C1E1BB692009E8384 /* WorkTools.h */,
+				7CA4869D1E1BB692009E8384 /* WorkTools.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -661,6 +679,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CF1E3471E15EA3E0035B6D0 /* LaunchScreen.storyboard in Resources */,
+				7C2F5DC11E1C8ED9006F5B65 /* UNSetUpEditController.xib in Resources */,
 				7CF1E3441E15EA3E0035B6D0 /* Assets.xcassets in Resources */,
 				7CF1E3421E15EA3E0035B6D0 /* Main.storyboard in Resources */,
 				7CC8FFBF1E16464500674990 /* UserinfoHeaderCell.xib in Resources */,
@@ -744,8 +763,10 @@
 			files = (
 				7CC8FF9F1E16215700674990 /* UIView+HUD.m in Sources */,
 				7CC8FFBE1E16464500674990 /* UserinfoHeaderCell.m in Sources */,
+				7C2F5DC01E1C8ED9006F5B65 /* UNSetUpEditController.m in Sources */,
 				7C2373321E1B3E8E0082099D /* RNFrostedSidebar.m in Sources */,
 				7CC8FFC21E164A0C00674990 /* UserInfoModel.m in Sources */,
+				7CA4869E1E1BB692009E8384 /* WorkTools.m in Sources */,
 				7CC8FFAD1E1627F200674990 /* UNUserLoginRegisterDetailController.m in Sources */,
 				7CF1E3831E15F6660035B6D0 /* UNLeftMenuController.m in Sources */,
 				7CC8FFBD1E16464500674990 /* UNUserInfoController.m in Sources */,
@@ -754,6 +775,7 @@
 				7CC8FF901E160F6900674990 /* UNUserLeftHeaderCell.m in Sources */,
 				7C2373401E1B6C1C0082099D /* UNStudentsListController.m in Sources */,
 				7CF1E3391E15EA3E0035B6D0 /* main.m in Sources */,
+				7CA486A11E1BC6B3009E8384 /* UNStudentDetailController.m in Sources */,
 				7CF1E3731E15F3EB0035B6D0 /* RESideMenu.m in Sources */,
 				7CF1E37F1E15F6070035B6D0 /* UNMainTableViewController.m in Sources */,
 				7CC8FFA31E16224900674990 /* UNUserLoginRegisterController.m in Sources */,

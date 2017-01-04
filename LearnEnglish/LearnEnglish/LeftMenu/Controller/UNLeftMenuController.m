@@ -21,11 +21,29 @@
 
 @interface UNLeftMenuController ()
 @property (strong, readwrite, nonatomic) UITableView *tableView;
+@property (nonatomic, strong) NSArray *titles;
+@property (nonatomic, strong) NSArray *images;
+
 //可以判断是否登录了
 @property (nonatomic, strong) BmobUser *userinfo;
 @end
 
 @implementation UNLeftMenuController
+
+- (NSArray *)images{
+
+    if (!_images) {
+        _images = @[@"home", @"message", @"friends", @"setup", @"studens",@"classes"];
+    }
+    return _images;
+}
+- (NSArray *)titles{
+
+    if (!_titles) {
+        _titles = @[@"首页", @"消息", @"好友列表", @"设置", @"班级列表",@"学生列表"];
+    }
+    return _titles;
+}
 
 #pragma mark 获取新的用户信息
 
@@ -114,7 +132,14 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 7;
+    BOOL  isTeacher = [[[BmobUser currentUser] objectForKey:@"teacher"] boolValue];
+
+    if (isTeacher) {
+        return self.titles.count + 1;
+    }else{
+    
+        return self.titles.count - 1;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -150,12 +175,8 @@
             cell.selectedBackgroundView = [[UIView alloc] init];
             
         }
-        
-        
-        NSArray *titles = @[@"首页", @"消息", @"好友列表", @"设置", @"班级列表",@"学生列表"];
-        NSArray *images = @[@"home", @"message", @"friends", @"setup", @"studens",@"classes"];
-        cell.textLabel.text = titles[indexPath.row - 1];
-        cell.imageView.image = [UIImage imageNamed:images[indexPath.row - 1]];
+        cell.textLabel.text = self.titles[indexPath.row - 1];
+        cell.imageView.image = [UIImage imageNamed:self.images[indexPath.row - 1]];
         return cell;
     }
     
