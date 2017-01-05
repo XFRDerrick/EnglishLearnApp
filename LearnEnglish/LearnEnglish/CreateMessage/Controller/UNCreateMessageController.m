@@ -9,7 +9,12 @@
 #import "UNCreateMessageController.h"
 
 @interface UNCreateMessageController ()
+@property (weak, nonatomic) IBOutlet UIView *toolBarView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *keyBoardHeaderConstraint;
+@property (weak, nonatomic) IBOutlet UIButton *showHidenKeyBoardButton;
+@property (weak, nonatomic) IBOutlet UILabel *imagesCountLable;
+@property (weak, nonatomic) IBOutlet YYTextView *titleTextView;
+@property (weak, nonatomic) IBOutlet YYTextView *contentTextView;
 
 @end
 
@@ -20,8 +25,53 @@
     // Do any additional setup after loading the view from its nib.
     
     [self setupUI];
+ 
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
 }
+
+
+#pragma mark -
+#pragma mark 有关键盘的设置
+- (void)keyboardFrameChange:(NSNotification *)notification{
+    NSDictionary *userInfo = [notification userInfo];
+    NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardRect = [aValue CGRectValue];
+    CGFloat y = keyboardRect.origin.y;
+    //判断键盘的收 关
+    if (y == KScreenSize.height) {
+        self.showHidenKeyBoardButton.selected = NO;
+        [UIView animateWithDuration:[self getKeyBoardAnimationDuration:notification] animations:^{
+             self.toolBarView.transform = CGAffineTransformIdentity;
+        }];
+    }else{
+        self.showHidenKeyBoardButton.selected = YES;
+        [UIView animateWithDuration:[self getKeyBoardAnimationDuration:notification] animations:^{
+            self.toolBarView.transform = CGAffineTransformMakeTranslation(0, -keyboardRect.size.height );
+        }];
+        
+    }
+}
+- (IBAction)hiddenKeyBoard:(UIButton *)sender {
+    
+    if (self.showHidenKeyBoardButton.selected) {
+        [self.view endEditing:YES];
+    }
+    
+}
+- (NSTimeInterval)getKeyBoardAnimationDuration:(NSNotification *)notification{
+    
+    NSDictionary *userInfo = [notification userInfo];
+    NSValue *durationValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSTimeInterval animationDuration;
+    [durationValue getValue:&animationDuration];
+
+    return animationDuration;
+}
+
+
+#pragma mark -
+#pragma mark 界面和导航栏设置
 - (void)setupUI{
 
     self.title = @"新建消息";
@@ -44,18 +94,50 @@
     [alterVC addAction:actionCancle];
     [alterVC addAction:actionFriends];
     [self presentViewController:alterVC animated:YES completion:nil];
-    
-    
-    
 }
 
 - (void)sendAction{
 
 }
+#pragma mark -
+#pragma mark 添加表情键盘
+- (IBAction)emojiButtonDidTouch:(UIButton *)sender {
+}
+
+
+
+
+#pragma mark -
+#pragma mark 图片选择器
+- (IBAction)pictureSelectDidTouch:(UIButton *)sender {
+}
+
+
+
+#pragma mark -
+#pragma mark 语音
+- (IBAction)voiceButtonDidTouch:(UIButton *)sender {
+}
+
+
+
+#pragma mark -
+#pragma mark 系统键盘
+- (IBAction)systemButtonDidTouch:(UIButton *)sender {
+    
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc{
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:nil object:nil];
 }
 
 /*

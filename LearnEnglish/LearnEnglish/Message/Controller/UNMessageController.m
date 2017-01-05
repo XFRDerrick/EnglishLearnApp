@@ -18,7 +18,6 @@
     [super viewDidLoad];
     [self setupMessageNav];
 
-    
 }
 
 - (void)setupMessageNav{

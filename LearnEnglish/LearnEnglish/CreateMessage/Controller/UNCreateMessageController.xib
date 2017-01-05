@@ -6,12 +6,19 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UNCreateMessageController">
             <connections>
+                <outlet property="contentTextView" destination="gUS-o9-wzY" id="jVU-W8-gSh"/>
+                <outlet property="imagesCountLable" destination="GZK-Io-jyp" id="196-jg-aey"/>
                 <outlet property="keyBoardHeaderConstraint" destination="Gm5-3Q-6Eb" id="puE-VA-Av4"/>
+                <outlet property="showHidenKeyBoardButton" destination="pI3-oF-Ne5" id="R62-xd-naO"/>
+                <outlet property="titleTextView" destination="gc6-Fr-n6j" id="uKY-UK-J3P"/>
+                <outlet property="toolBarView" destination="Ibf-Uu-k2k" id="4a7-UJ-t03"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,13 +32,6 @@
                     <color key="backgroundColor" red="0.83319737979999997" green="0.83319737979999997" blue="0.83319737979999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="PET-7I-ePv"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ibf-Uu-k2k">
-                    <rect key="frame" x="0.0" y="622" width="375" height="45"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="45" id="TQq-Mj-lUg"/>
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gc6-Fr-n6j" customClass="YYTextView">
@@ -62,6 +62,94 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ibf-Uu-k2k">
+                    <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGR-KL-YLz">
+                            <rect key="frame" x="20" y="8" width="29" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="vGR-KL-YLz" secondAttribute="height" multiplier="1:1" id="nr0-gS-kbl"/>
+                            </constraints>
+                            <state key="normal" image="toolbar_face"/>
+                            <connections>
+                                <action selector="emojiButtonDidTouch:" destination="-1" eventType="touchUpInside" id="NbT-YI-NVv"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNl-S7-ogv">
+                            <rect key="frame" x="79" y="8" width="29" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="JNl-S7-ogv" secondAttribute="height" multiplier="1:1" id="0Ck-e1-fLF"/>
+                            </constraints>
+                            <state key="normal" image="toolbar_image"/>
+                            <connections>
+                                <action selector="pictureSelectDidTouch:" destination="-1" eventType="touchUpInside" id="VU6-ZE-IgE"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AN8-kx-5dc">
+                            <rect key="frame" x="138" y="8" width="29" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="AN8-kx-5dc" secondAttribute="height" multiplier="1:1" id="2Sv-oy-BAO"/>
+                            </constraints>
+                            <state key="normal" image="toolbar_mic"/>
+                            <connections>
+                                <action selector="voiceButtonDidTouch:" destination="-1" eventType="touchUpInside" id="zfr-l7-RfN"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U98-MG-Fh1">
+                            <rect key="frame" x="197" y="8" width="29" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="U98-MG-Fh1" secondAttribute="height" multiplier="1:1" id="NXN-A1-NPa"/>
+                            </constraints>
+                            <state key="normal" image="toolbar_keyborad"/>
+                            <connections>
+                                <action selector="systemButtonDidTouch:" destination="-1" eventType="touchUpInside" id="LWM-09-tvp"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZK-Io-jyp">
+                            <rect key="frame" x="93.5" y="4.5" width="18" height="18"/>
+                            <color key="backgroundColor" red="1" green="0.064276865650000001" blue="0.062996896689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="cxd-YG-2uq"/>
+                                <constraint firstAttribute="width" constant="18" id="eff-0F-qpV"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pI3-oF-Ne5">
+                            <rect key="frame" x="310.5" y="8" width="44.5" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="pI3-oF-Ne5" secondAttribute="height" multiplier="23:15" id="VIf-4w-grr"/>
+                            </constraints>
+                            <state key="normal" image="bt_up_normal"/>
+                            <state key="selected" image="bt_down_normal"/>
+                            <connections>
+                                <action selector="hiddenKeyBoard:" destination="-1" eventType="touchUpInside" id="dZP-LP-pts"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="AN8-kx-5dc" firstAttribute="top" secondItem="Ibf-Uu-k2k" secondAttribute="top" constant="8" id="6XO-Hg-cxc"/>
+                        <constraint firstAttribute="bottom" secondItem="JNl-S7-ogv" secondAttribute="bottom" constant="8" id="FHX-aP-86u"/>
+                        <constraint firstItem="JNl-S7-ogv" firstAttribute="leading" secondItem="vGR-KL-YLz" secondAttribute="trailing" constant="30" id="GnH-4G-zkd"/>
+                        <constraint firstAttribute="bottom" secondItem="U98-MG-Fh1" secondAttribute="bottom" constant="8" id="Gwb-o0-chk"/>
+                        <constraint firstAttribute="bottom" secondItem="AN8-kx-5dc" secondAttribute="bottom" constant="8" id="H4b-IK-X37"/>
+                        <constraint firstItem="U98-MG-Fh1" firstAttribute="leading" secondItem="AN8-kx-5dc" secondAttribute="trailing" constant="30" id="HRu-Ui-g1g"/>
+                        <constraint firstItem="U98-MG-Fh1" firstAttribute="top" secondItem="Ibf-Uu-k2k" secondAttribute="top" constant="8" id="Kgo-UW-KBj"/>
+                        <constraint firstItem="AN8-kx-5dc" firstAttribute="leading" secondItem="JNl-S7-ogv" secondAttribute="trailing" constant="30" id="Pnp-xI-5eV"/>
+                        <constraint firstAttribute="trailing" secondItem="pI3-oF-Ne5" secondAttribute="trailing" constant="20" id="RcR-Hc-LzY"/>
+                        <constraint firstItem="JNl-S7-ogv" firstAttribute="top" secondItem="Ibf-Uu-k2k" secondAttribute="top" constant="8" id="SoJ-8j-YsO"/>
+                        <constraint firstAttribute="height" constant="45" id="TQq-Mj-lUg"/>
+                        <constraint firstItem="GZK-Io-jyp" firstAttribute="bottom" secondItem="Ibf-Uu-k2k" secondAttribute="centerY" id="hBd-aT-FEu"/>
+                        <constraint firstAttribute="bottom" secondItem="pI3-oF-Ne5" secondAttribute="bottom" constant="8" id="i0L-IU-s4i"/>
+                        <constraint firstItem="vGR-KL-YLz" firstAttribute="leading" secondItem="Ibf-Uu-k2k" secondAttribute="leading" constant="20" id="iOw-Xi-gVx"/>
+                        <constraint firstItem="vGR-KL-YLz" firstAttribute="top" secondItem="Ibf-Uu-k2k" secondAttribute="top" constant="8" id="kQv-ow-Ppw"/>
+                        <constraint firstAttribute="bottom" secondItem="vGR-KL-YLz" secondAttribute="bottom" constant="8" id="nuF-Xa-6Z0"/>
+                        <constraint firstItem="GZK-Io-jyp" firstAttribute="leading" secondItem="JNl-S7-ogv" secondAttribute="centerX" id="qKk-NY-Or0"/>
+                        <constraint firstItem="pI3-oF-Ne5" firstAttribute="top" secondItem="Ibf-Uu-k2k" secondAttribute="top" constant="8" id="u2f-Ds-6D7"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -83,4 +171,12 @@
             <point key="canvasLocation" x="44.5" y="73.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="bt_down_normal" width="30" height="30"/>
+        <image name="bt_up_normal" width="30" height="30"/>
+        <image name="toolbar_face" width="24" height="24"/>
+        <image name="toolbar_image" width="24" height="24"/>
+        <image name="toolbar_keyborad" width="24" height="24"/>
+        <image name="toolbar_mic" width="24" height="24"/>
+    </resources>
 </document>
