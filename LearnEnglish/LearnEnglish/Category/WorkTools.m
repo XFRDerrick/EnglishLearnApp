@@ -24,4 +24,21 @@
     
 }
 
+//做textView的表情匹配
++ (void)emojiMappingWithText:(YYTextView *)textView{
+
+    YYTextSimpleEmoticonParser *parser = [[YYTextSimpleEmoticonParser alloc] init];
+    NSMutableDictionary *mapperDict = [NSMutableDictionary dictionary];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"default" ofType:@"plist"];
+    NSArray *emojiArr = [NSArray arrayWithContentsOfFile:path];
+    for (NSDictionary *emojDic in emojiArr) {
+        NSString *imageName = emojDic[@"png"];
+        NSString *text = emojDic[@"chs"];
+        [mapperDict setObject:[UIImage imageNamed:imageName] forKey:text];
+    }
+    parser.emoticonMapper = mapperDict;
+    textView.textParser = parser;
+}
+
+
 @end

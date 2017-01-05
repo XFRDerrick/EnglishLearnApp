@@ -34,7 +34,7 @@
                         <constraint firstAttribute="height" constant="1" id="PET-7I-ePv"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gc6-Fr-n6j" customClass="YYTextView">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="110" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gc6-Fr-n6j" customClass="YYTextView">
                     <rect key="frame" x="10" y="75" width="355" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="JPp-aU-cXr"/>
@@ -50,7 +50,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="fontIsBold_" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </scrollView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUS-o9-wzY" customClass="YYTextView">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="120" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUS-o9-wzY" customClass="YYTextView">
                     <rect key="frame" x="10" y="121" width="355" height="496"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="说点什么……"/>
@@ -128,7 +128,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.95554409898477155" green="0.95554409898477155" blue="0.95554409898477155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="AN8-kx-5dc" firstAttribute="top" secondItem="Ibf-Uu-k2k" secondAttribute="top" constant="8" id="6XO-Hg-cxc"/>
                         <constraint firstAttribute="bottom" secondItem="JNl-S7-ogv" secondAttribute="bottom" constant="8" id="FHX-aP-86u"/>

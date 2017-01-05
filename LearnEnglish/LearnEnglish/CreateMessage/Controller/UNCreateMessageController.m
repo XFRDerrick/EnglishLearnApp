@@ -7,18 +7,30 @@
 //
 
 #import "UNCreateMessageController.h"
+#import "UNEmojiView.h"
 
-@interface UNCreateMessageController ()
+@interface UNCreateMessageController ()<YYTextViewDelegate,UNEmojiViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIView *toolBarView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *keyBoardHeaderConstraint;
 @property (weak, nonatomic) IBOutlet UIButton *showHidenKeyBoardButton;
 @property (weak, nonatomic) IBOutlet UILabel *imagesCountLable;
+
 @property (weak, nonatomic) IBOutlet YYTextView *titleTextView;
 @property (weak, nonatomic) IBOutlet YYTextView *contentTextView;
+@property (nonatomic, strong) YYTextView *currentTextView;
+
+//
+@property (nonatomic, strong) UNEmojiView *emojiView;
 
 @end
 
 @implementation UNCreateMessageController
+
+
+- (void)textViewDidBeginEditing:(YYTextView *)textView{
+    self.currentTextView = textView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -79,6 +91,10 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"发送" style:UIBarButtonItemStyleDone target:self action:@selector(sendAction)];
     
+    self.titleTextView.delegate = self;
+    self.contentTextView.delegate = self;
+    [self.titleTextView becomeFirstResponder];
+    
 }
 
 - (void)backAction{
@@ -101,9 +117,37 @@
 }
 #pragma mark -
 #pragma mark 添加表情键盘
-- (IBAction)emojiButtonDidTouch:(UIButton *)sender {
+
+- (UNEmojiView *)emojiView{
+
+    if (!_emojiView) {
+        _emojiView = [[[NSBundle mainBundle] loadNibNamed:@"UNEmojiView" owner:self options:0] firstObject];
+        _emojiView.delegate = self;
+        //让界面中文本输入框 进行表情匹配
+        [WorkTools emojiMappingWithText:self.titleTextView];
+        [WorkTools emojiMappingWithText:self.contentTextView];
+        
+    }
+    return _emojiView;
 }
 
+- (IBAction)emojiButtonDidTouch:(UIButton *)sender {
+    //self.currentTextView.inputView? nil :
+    self.currentTextView.inputView = self.emojiView;
+    [self.currentTextView reloadInputViews];
+    
+}
+
+//代理实现点击事件
+- (void)didClickDeleteButton{
+
+    [self.currentTextView deleteBackward];
+}
+
+- (void)didClickEmoji:(NSString *)text{
+    [self.currentTextView insertText:text];
+    
+}
 
 
 
@@ -125,7 +169,8 @@
 #pragma mark 系统键盘
 - (IBAction)systemButtonDidTouch:(UIButton *)sender {
     
-    
+    self.currentTextView.inputView = nil;
+    [self.currentTextView reloadInputViews];
 }
 
 

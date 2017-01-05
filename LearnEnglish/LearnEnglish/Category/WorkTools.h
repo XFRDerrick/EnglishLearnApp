@@ -12,4 +12,6 @@
 
 + (void)loginTeacherAccount;
 
++ (void)emojiMappingWithText:(YYTextView *)textView;
+
 @end
