@@ -8,6 +8,8 @@
 
 #import "UNCreateMessageController.h"
 #import "UNEmojiView.h"
+#import "UNSelectPhotosView.h"
+
 
 @interface UNCreateMessageController ()<YYTextViewDelegate,UNEmojiViewDelegate>
 
@@ -20,8 +22,11 @@
 @property (weak, nonatomic) IBOutlet YYTextView *contentTextView;
 @property (nonatomic, strong) YYTextView *currentTextView;
 
-//
+//表情键盘
 @property (nonatomic, strong) UNEmojiView *emojiView;
+//图片键盘
+@property (nonatomic, strong) UNSelectPhotosView *selectPhotoView;
+
 
 @end
 
@@ -153,7 +158,14 @@
 
 #pragma mark -
 #pragma mark 图片选择器
+
+
+
 - (IBAction)pictureSelectDidTouch:(UIButton *)sender {
+    
+    
+    
+    
 }
 
 

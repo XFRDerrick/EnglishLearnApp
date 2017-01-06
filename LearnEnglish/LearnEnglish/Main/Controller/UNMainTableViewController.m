@@ -34,6 +34,7 @@
 //    user
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"user"] style:UIBarButtonItemStyleDone target:self action:@selector(showRightSideBar)];
     self.navigationItem.rightBarButtonItem = rightItem;
+    
 }
 
 #pragma mark 右侧边栏的显示等
